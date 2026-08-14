@@ -7,21 +7,20 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "mysql2": "^3.23.2"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ratoleproso/api2.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/ratoleproso/api2/issues"
   },
-  "homepage": "https://github.com/ratoleproso/api2#readme"
+  "homepage": "https://github.com/ratoleproso/api2#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
 }

@@ -1,36 +1,25 @@
 const express = require('express');
+const cors = require('cors');
 
-const app = express();
-app.use(express.json());
 
-const alunos =[
-{
-    "nome": "didi",
-    "idade": "28"
-},
-{
-    "nome": "vivi",
-    "idade": "67"
-},
-{
-    "nome": "dede",
-    "idade": "69"
-}
-]
+const app = express()
 
-app.get('/alunos', (req, res) =>{
+app.use(express.json())
+
+app.use(cors({
+    origin: ["http://localhost:5500", "http://127.0.0.1:5500"]
+}));
+
+
+app.get("/alunos", (req, res) => {
     res.send('Pegando dados da API')
 })
 
-app.post('/alunos', (req, res) => {
-    //const novoItem = {id: idCounter++, nome: req.body.nome};
-    //itens.push(noveItem);
-    //res.status(201).json(novoItem);
-
-    const {nome, idade} =req.body
-    res.send('Nome: ${nome} Idade: ${idade}')
+app.post("/alunos", (req, res) => {
+    const { nome, url } = req.body
+    res.json({"nome": nome, "url": url})
 })
 
 app.listen(3000, () => {
     console.log('Servidor rodando na porta 3000')
-});
+})
